@@ -29,7 +29,7 @@ export const MoodPicker: React.FC<MoodPickerProps> = ({ handleSelectMood }) => {
   const buttonStyle = useAnimatedStyle(
     () => ({
       opacity: selectedMood ? withTiming(1) : withTiming(0.5),
-      transform: [{ scale: selectedMood ? withTiming(1) : withTiming(0.8) }],
+      transform: [{ scale: selectedMood ? withTiming(1) : 0.8 }],
     }),
     [selectedMood],
   );
