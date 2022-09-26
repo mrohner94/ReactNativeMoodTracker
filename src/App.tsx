@@ -5,6 +5,7 @@ import { AppProvider } from './App.provider';
 import { BottomTabsNavigator } from './screens/BottomTabs.navigator';
 import { Platform, UIManager } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import SplashScreen from 'react-native-splash-screen';
 
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
@@ -12,6 +13,9 @@ if (Platform.OS === 'android') {
   }
 }
 export const App: React.FC = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <AppProvider>
